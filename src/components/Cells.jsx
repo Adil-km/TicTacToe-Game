@@ -3,9 +3,8 @@ import { GameContext } from './Board';
 import checkWinner from "../utils/checkWinner"
 
 export default function Cells() {
-    const {board, setBoard, player, changePlayer, gameState, isRunning,changeContent} = useContext(GameContext);
+    const {board, setBoard, player, changePlayer, gameState, setGameState ,setContent} = useContext(GameContext);
     
-
     const cells = board.map((cellContent, index) => (
     <div onClick={(e)=>handleClick(e)} key={index} pos={index} tabIndex={index} className="cell">
       {cellContent}
@@ -13,6 +12,10 @@ export default function Cells() {
   ));
 
   function handleClick(e){
+    if(player==="O"){
+      return
+    }
+    
     if(!gameState)return;
     let cellIndex = e.target.getAttribute("pos")
     let cellContent = e.target.textContent
@@ -27,17 +30,21 @@ export default function Cells() {
 
     setBoard(newBoard);
 
-    changeContent(`Player ${(player==="X"?"O":"X")}'s turn`)
+    setContent(`Player ${(player==="X"?"O":"X")}'s turn`)
     let [win, p] = checkWinner(newBoard,player)
 
     if(win){
-      changeContent(`Player ${p} won the game!`)
-      isRunning()
+      setContent(`Player ${p} won the game!`)
+      setGameState(false)
     }
     
     changePlayer()
     
     console.log(newBoard);
+    if(!newBoard.includes("")){
+      setContent("It's a draw!")
+    }
+
   }
 
   return (

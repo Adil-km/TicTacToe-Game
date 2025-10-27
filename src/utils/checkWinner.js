@@ -22,7 +22,7 @@ export default function checkWinner(options,currentPlayer) {
         return [true,currentPlayer];
     } else if (!options.includes("")) {
         console.log("It's a draw!");
-        return [true,currentPlayer];
+        return [true,"draw"];
     } 
     return [false,currentPlayer];
 }
