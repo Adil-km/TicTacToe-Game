@@ -6,15 +6,12 @@ export default function Cells() {
     const {board, setBoard, player, changePlayer, gameState, setGameState ,setContent} = useContext(GameContext);
     
     const cells = board.map((cellContent, index) => (
-    <div onClick={(e)=>handleClick(e)} key={index} pos={index} tabIndex={index} className="cell">
+    <div onClick={(e)=>handleClick(e)} key={index} pos={index} className="cell">
       {cellContent}
       </div>
   ));
 
   function handleClick(e){
-    if(player==="O"){
-      return
-    }
     
     if(!gameState)return;
     let cellIndex = e.target.getAttribute("pos")
@@ -30,21 +27,21 @@ export default function Cells() {
 
     setBoard(newBoard);
 
-    setContent(`Player ${(player==="X"?"O":"X")}'s turn`)
     let [win, p] = checkWinner(newBoard,player)
 
-    if(win){
-      setContent(`Player ${p} won the game!`)
-      setGameState(false)
+    if (win) {
+      if (p === "draw") {
+        setContent("It's a draw!");
+      } else {
+        setContent(`Player ${p} won the game!`); 
+      }
+      setGameState(false);
     }
-    
-    changePlayer()
     
     console.log(newBoard);
-    if(!newBoard.includes("")){
-      setContent("It's a draw!")
-    }
-
+    if(!win){
+       changePlayer()
+      }
   }
 
   return (

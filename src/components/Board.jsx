@@ -14,9 +14,10 @@ export default function Board() {
   const [player, setPlayer] = useState("X")
   const [gameState, setGameState] = useState(true)
   const [content, setContent] = useState("Player X's turn")
+  const [isComputer, setIsComputer] = useState(false)
 
   useEffect(() => {
-    if (player === "O" && gameState) {
+    if (player === "O" && gameState && isComputer) {
       const timer = setTimeout(() => {
         const bestMoveIndex = find_best_move(board, winConditions);
         if (bestMoveIndex !== -1) {
@@ -28,9 +29,12 @@ export default function Board() {
           
           let [win, p] = checkWinner(newBoard,"O")
         
-          if(win){
-            setContent(`Player O won the game!`)
-            setGameState(false)
+          if (win) {
+            setContent(`Player ${player} won the game!`);
+            setGameState(false);
+          } else if (!newBoard.includes("")) {
+            setContent("It's a draw!");
+            setGameState(false);
           }
           
         }
@@ -39,11 +43,22 @@ export default function Board() {
     }
   }, [player, board, gameState]);
   
-  function changePlayer() {
-    if (player === "X") {
-      setPlayer("O");
-      setContent("AI is thinking...");
-    }
+function changePlayer() {
+    setPlayer(currentPlayer => {
+      const nextPlayer = currentPlayer === "X" ? "O" : "X";
+
+      if (!isComputer) {
+        setContent(`Player ${nextPlayer}'s turn`);
+      } else {
+        if (nextPlayer === "O") {
+          setContent("AI is thinking...");
+        } else {
+          setContent(`Player ${nextPlayer}'s turn`);
+        }
+      }
+      
+      return nextPlayer;
+    });
   }
   
   function restartGame(){
@@ -56,7 +71,7 @@ export default function Board() {
   
   return (
     <>
-        <GameContext.Provider value={{board,setBoard, player, changePlayer, gameState, setGameState, restartGame, content, setContent}}>
+        <GameContext.Provider value={{board,setBoard, player, changePlayer, gameState, setGameState, restartGame, content, setContent, isComputer, setIsComputer}}>
           <BoardGrid>
               <Cells/>
           </BoardGrid>
