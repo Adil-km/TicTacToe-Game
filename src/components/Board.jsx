@@ -7,7 +7,7 @@ import Cells from './Cells';
 import { createContext, useEffect, useState } from 'react';
 
 export const GameContext = createContext()
-
+import { useParams } from "react-router-dom";
 export default function Board() {
   
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""])
@@ -15,6 +15,11 @@ export default function Board() {
   const [gameState, setGameState] = useState(true)
   const [content, setContent] = useState("Player X's turn")
   const [isComputer, setIsComputer] = useState(false)
+  
+  const { mode } = useParams();
+  useEffect(() => {
+    setIsComputer(mode === "computer");
+  }, [mode]);
 
   useEffect(() => {
     if (player === "O" && gameState && isComputer) {
