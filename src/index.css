@@ -4,3 +4,8 @@
 .cell{
     @apply bg-amber-600 hover:bg-amber-700 transition-colors duration-100 ease-in aspect-square inset-shadow-[-3px_3px_10px_#00000096] rounded-lg shadow-[-3px_3px_2px_#ffd5a5b5] text-white font-extrabold flex justify-center items-center sm:text-7xl text-5xl text-shadow-[-3px_3px_10px_#00000096] overflow-hidden focus:ring-offset-red-500 active:outline-red-600;
 }
+
+.winner{
+    @apply bg-red-600 hover:bg-red-500 transition-shadow duration-300 ease-in aspect-square shadow-[-2px_2px_6px_#00000096] rounded-lg inset-shadow-[-3px_3px_2px_#ffd5a5b5] text-white font-extrabold flex justify-center items-center sm:text-7xl text-5xl text-shadow-[-2px_2px_1px_#00000096] overflow-hidden focus:ring-offset-red-500 active:outline-red-600;
+
+}

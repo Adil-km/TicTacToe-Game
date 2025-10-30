@@ -15,12 +15,13 @@ export default function Board() {
   const [gameState, setGameState] = useState(true)
   const [content, setContent] = useState("Player X's turn")
   const [isComputer, setIsComputer] = useState(false)
+  const [winnerCell, setWinnerCell] = useState([])
   
   const { mode } = useParams();
   useEffect(() => {
     setIsComputer(mode === "computer");
   }, [mode]);
-
+  
   useEffect(() => {
     if (player === "O" && gameState && isComputer) {
       const timer = setTimeout(() => {
@@ -32,10 +33,11 @@ export default function Board() {
           setPlayer("X");
           setContent("Player X's turn");
           
-          let [win, p] = checkWinner(newBoard,"O")
-        
+          let [win, p, op] = checkWinner(newBoard,"O")
+          
           if (win) {
             setContent(`Player ${player} won the game!`);
+            setWinnerCell(op)
             setGameState(false);
           } else if (!newBoard.includes("")) {
             setContent("It's a draw!");
@@ -71,12 +73,13 @@ function changePlayer() {
     setBoard(["", "", "", "", "", "", "", "", ""]);
     setPlayer("X");
     setGameState(true)
+    setWinnerCell([])
     console.log("Game Restarted");
   }
   
   return (
     <>
-        <GameContext.Provider value={{board,setBoard, player, changePlayer, gameState, setGameState, restartGame, content, setContent, isComputer, setIsComputer}}>
+        <GameContext.Provider value={{board,setBoard, player, changePlayer, gameState, setGameState, restartGame, content, setContent, isComputer, setIsComputer, winnerCell, setWinnerCell}}>
           <BoardGrid>
               <Cells/>
           </BoardGrid>
