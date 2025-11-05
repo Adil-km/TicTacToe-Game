@@ -7,10 +7,10 @@ Play with a friend or challenge the AI powered by the Minimax algorithm 🤖
 
 ## About TicTacToe :anchor:
 
-TicTacToe is a modern take on the classic 3×3 grid game — rebuilt for the web with a beautiful interface and smooth gameplay.
+TicTacToe is a modern take on the classic 3×3 grid game. This is a rebuilt for the web with a beautiful interface and smooth gameplay.
 It supports both **Player vs Player (PvP)** and **Player vs AI** modes, so you can either challenge a friend locally or test your strategy against the computer.
 
-The project demonstrates key React concepts like **state management**, **context**, **component composition**, and **conditional rendering** — all wrapped in an elegant, responsive UI.
+The project demonstrates key React concepts like **state management**, **context**, **component composition** and **conditional rendering** - all wrapped in an elegant and responsive UI.
 
 :video_game: [Click here to play](https://tic-tac-toe-game-react-js-tailwind.vercel.app) :video_game:
 
