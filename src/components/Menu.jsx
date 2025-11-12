@@ -8,7 +8,7 @@ export default function Menu() {
   return (
 <div className="bg-orange-200 h-svh p-4 pt-10 flex flex-col items-center justify-center gap-8 bg-gradient-to-b ">
 
-      <div className="text-center mb-8">
+      <div className="text-center mb-8 cursor-default">
         <h2 className="text-7xl font-extrabold text-rose-800 mb-3 animate-pulse tracking-wide">
           Welcome to
         </h2>
