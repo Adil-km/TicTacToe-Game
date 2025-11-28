@@ -4,6 +4,7 @@ import Board from './components/Board';
 import Footer from './components/Footer';
 import Menu from './components/Menu';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import About from './components/About';
 function App() {
 
   return (
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Menu/>}/>
+          <Route path="/about" element={<About/>}/>
           <Route path="/play/:mode" element={<Board/>}/>
         </Routes>
       </BrowserRouter>

@@ -9,3 +9,36 @@
     @apply bg-red-600 hover:bg-red-500 transition-shadow duration-300 ease-in aspect-square shadow-[-2px_2px_6px_#00000096] rounded-lg inset-shadow-[-3px_3px_2px_#ffd5a5b5] text-white font-extrabold flex justify-center items-center sm:text-7xl text-5xl text-shadow-[-2px_2px_1px_#00000096] overflow-hidden focus:ring-offset-red-500 active:outline-red-600;
 
 }
+.markdown-body {
+  @apply w-full md:max-w-[70%] bg-white/70 backdrop-blur-md shadow-xl rounded-xl
+         p-4 sm:p-6 md:p-8 border border-orange-300/40 text-base sm:text-lg md:text-xl leading-relaxed;
+}
+
+/* Headings */
+.markdown-body h1 { @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4; }
+.markdown-body h2 { @apply text-xl sm:text-2xl md:text-3xl font-semibold mt-6 mb-3; }
+.markdown-body h3 { @apply text-lg sm:text-xl md:text-2xl font-semibold mt-4 mb-2; }
+
+/* Paragraphs */
+.markdown-body p { @apply mb-4; }
+
+/* Strong text */
+.markdown-body strong { @apply font-semibold text-orange-600; }
+
+/* Links */
+.markdown-body a { @apply text-orange-500 hover:text-orange-700 underline break-words; }
+
+/* Horizontal rule */
+.markdown-body hr { @apply my-4 sm:my-6 border-t border-orange-300/50; }
+
+/* Lists */
+.markdown-body ul { @apply list-disc pl-5 mb-4; }
+.markdown-body ol { @apply list-decimal pl-5 mb-4; }
+.markdown-body li { @apply mb-2; }
+
+/* Code blocks */
+.markdown-body pre { @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4 text-sm sm:text-base; }
+.markdown-body code { @apply font-mono text-sm sm:text-base bg-gray-100 dark:bg-gray-800 dark:text-[#f9fafb] px-1 py-0.5 rounded break-words; }
+
+/* Emphasis/italic */
+.markdown-body em { @apply italic; }
