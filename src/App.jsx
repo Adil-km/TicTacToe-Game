@@ -9,9 +9,8 @@ function App() {
 
   return (
     <>
-      <NavBar/>
-
       <BrowserRouter>
+      <NavBar/>
         <Routes>
           <Route path="/" element={<Menu/>}/>
           <Route path="/about" element={<About/>}/>
