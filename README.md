@@ -21,10 +21,10 @@ This project demonstrates key React concepts like **state management**, **contex
 
 *Here’s a quick look at the game in action:*
 
-![Game Playthrough - PvP Mode](assets/player_vs_player_demo.gif)
+![Game Playthrough - PvP Mode](public/player_vs_player_demo.gif)
 Game Playthrough - PvP Mode
 
-![Game Playthrough - AI Mode](assets/player_vs_computer_demo.gif)
+![Game Playthrough - AI Mode](public/player_vs_computer_demo.gif)
 Game Playthrough - AI Mode
 
 ---
