@@ -25,9 +25,17 @@ export default function About() {
 
       {/* MARKDOWN CONTENT */}
       <div className="markdown-body w-full sm:w-11/12 md:w-3/4 lg:w-2/3 xl:w-2/5 bg-white/70 backdrop-blur-md shadow-xl rounded-xl p-4 sm:p-6 md:p-8 border border-orange-300/40 text-base sm:text-lg md:text-xl leading-relaxed">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {readme}
-        </ReactMarkdown>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          img: ({ src, ...props }) => {
+            const fixedSrc = src.replace(/^public\//, "/");
+            return <img src={fixedSrc} {...props} />;
+          },
+        }}
+      >
+        {readme}
+      </ReactMarkdown>
       </div>
     </div>
   );
