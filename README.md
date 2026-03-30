@@ -13,22 +13,34 @@ It supports both **Player vs Player (PvP)** and **Player vs AI** modes, allowing
 
 This project demonstrates key React concepts like **state management**, **context**, **component composition**, and **conditional rendering** - all wrapped in an elegant and responsive UI.
 
-🎮 **[Click here to play the game](https://tic-tac-toe-game-react-js-tailwind.vercel.app)**
+---
+
+## Live Demo & Visuals
+
+🎮 **[Play the Live Demo Here](https://tic-tac-toe-game-react-js-tailwind.vercel.app)**
+
+*Here’s a quick look at the game in action:*
+
+![Game Playthrough - PvP Mode](assets/player_vs_player_demo.gif)
+Game Playthrough - PvP Mode
+
+![Game Playthrough - AI Mode](assets/player_vs_computer_demo.gif)
+Game Playthrough - AI Mode
 
 ---
 
-## Key Features ✨
+## Key Features
 
-- **🧑‍🤝‍🧑 Player vs Player Mode:** Two players can take turns on the same device.
-- **🤖 AI Mode:** Challenge a smart AI opponent powered by the **Minimax algorithm**.
-- **⚡ Fast & Lightweight:** Built using Vite for instant hot reloads and blazing-fast performance.
-- **💎 Clean & Modern UI:** Tailwind CSS ensures a responsive and elegant design.
-- **📱 Responsive Layout:** Works smoothly across desktop and mobile devices.
-- **🔁 Game Restart:** Reset the board anytime to start a new match.
+- **Player vs Player Mode:** Two players can take turns on the same device.
+- **AI Mode:** Challenge a smart AI opponent powered by the **Minimax algorithm**.
+- **Fast & Lightweight:** Built using Vite for instant hot reloads and blazing-fast performance.
+- **Clean & Modern UI:** Tailwind CSS ensures a responsive and elegant design.
+- **Responsive Layout:** Works smoothly across desktop and mobile devices.
+- **Game Restart:** Reset the board anytime to start a new match.
 
 ---
 
-## How to Play ✋
+## How to Play
 
 1. **Choose Game Mode:** Select between *Player vs Player* or *Player vs AI*.
 2. **Take Turns:** Players (or AI) alternate placing “X” and “O” on the grid.
@@ -37,7 +49,7 @@ This project demonstrates key React concepts like **state management**, **contex
 
 ---
 
-## Getting Started 🛠️
+## Getting Started
 
 Follow these steps to run the game locally:
 
@@ -62,7 +74,7 @@ Then open the local URL (usually [http://localhost:5173](http://localhost:5173))
 
 ---
 
-## Tech Stack 🧩
+## Tech Stack
 
 * **Frontend:** React.js
 * **Styling:** Tailwind CSS
@@ -72,7 +84,7 @@ Then open the local URL (usually [http://localhost:5173](http://localhost:5173))
 
 ---
 
-## Contact 💬
+## Contact
 
 Want to learn more about this project or connect with the creator?
 
